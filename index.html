@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<Style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        /* background-color: #87CEEB; */
+        background: #d8eaf3;
+        /* background: linear-gradient(150deg, #f25e5e, #c11111); */
+    }
+
+    .buttons {
+        width: 225px;
+        height: 75px;
+        font-family: cursive;
+        font-size: 25px;
+        /* position: absolute; */
+        border: 2px solid #f2c2c8;
+        border-radius: 9px;
+    }
+
+    #button {
+        background-color: red;
+        background: linear-gradient(150deg, #f25e5e, #c11111);
+        /* background: radial-gradient(70deg, #ffffff, #ff0026); */
+        color: #FFFFFF;
+        position: absolute;
+        top: 75%;
+        align-items: center;
+        margin-top: -40px;
+        margin-left: -105px;
+        outline: none;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    #refreshButton {
+        position: absolute;
+        bottom: 7%;
+        right: 7%;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+
+    #heart1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -150px;
+        background-color: #ffdae0;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+    }
+
+    #heart2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -90px;
+        margin-left: -50px;
+        background-color: #ffdae0;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+    }
+
+    #heart3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 50px;
+        margin-left: -50px;
+        background-color: #ffdae0;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+    }
+
+    #heart4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -90px;
+        margin-left: 100px;
+        background-color: #ffdae0;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+    }
+
+    #heart5 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 25px;
+        margin-left: 100px;
+        background-color: #ffdae0;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+    }
+
+    .hearts:after {
+        background-color: #ffdae0;
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0px;
+        left: 25px;
+    }
+
+    .hearts:before {
+        background-color: #ffdae0;
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        left: 0px;
+    }
+
+    .love:hover>#heart1 {
+        animation-name: hearts1;
+        animation-duration: 1.1s;
+        animation-iteration-count: infinite;
+    }
+
+    .love:hover>#heart2 {
+        animation-name: hearts2;
+        animation-duration: 0.9s;
+        animation-iteration-count: infinite;
+    }
+
+    .love:hover>#heart3 {
+        animation-name: hearts3;
+        animation-duration: 0.9s;
+        animation-iteration-count: infinite;
+    }
+
+    .love:hover>#heart4 {
+        animation-name: hearts4;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    .love:hover>#heart5 {
+        animation-name: hearts5;
+        animation-duration: 1.1s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes hearts1 {
+        0% {
+            transform: scale(0.1, 0.1) rotate(-45deg);
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes hearts2 {
+        20% {
+            transform: scale(0.2, 0.2) rotate(-45deg);
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes hearts3 {
+        40% {
+            transform: scale(0.3, 0.3) rotate(-45deg);
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes hearts4 {
+        60% {
+            transform: scale(0.4, 0.4) rotate(-45deg);
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes hearts5 {
+        80% {
+            transform: scale(0.6, 0.6) rotate(-45deg);
+            opacity: 0.8;
+        }
+    }
+
+    #button:active {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.23);
+        transform: scale(0.99);
+    }
+
+    .container {
+        /* position: relative; */
+        width: 100%;
+        height: 200px;
+        text-align: center;
+    }
+
+    .penguin {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        bottom: 0;
+    }
+
+    #penguin1 {
+        left: 20%;
+        top: 25%;
+    }
+
+    /* Tooltip container */
+    .tooltip {
+        /* position: relative; */
+        display: inline-block;
+        /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: red;
+        background: linear-gradient(150deg, #f25e5e, #c11111);
+        color: #fff;
+        font-family: cursive;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: medium;
+
+        /* Position the tooltip text - see examples below! */
+        /* position: absolute; */
+        z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    #penguin2 {
+        right: 20%;
+        top: 25%;
+
+    }
+
+    button {
+        /* margin: 20px; */
+        /* padding: 20px; */
+        font-size: 24px;
+        cursor: pointer;
+    }
+</Style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Mover</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="PenguinsRow">
+            <div id="habibi">
+                <div class="tooltip">
+                    <img id="penguin1" class="penguin"
+                        src="https://static.wikia.nocookie.net/spoof/images/1/17/Pax.png/revision/latest?cb=20250223010006">
+                    <span class="tooltiptext"><strong>HABIBI</strong></span>
+                </div>
+            </div>
+            <div id="habibti">
+                <!-- <img id="penguin2" class="penguin" src="https://i.pinimg.com/736x/c2/de/a1/c2dea19f26de5d325d37c5f8145742c2.jpg"> -->
+                <div class="tooltip">
+                    <img id="penguin2" class="penguin"
+                        src="https://static.wikia.nocookie.net/spoof/images/2/28/Polly_%28Pudgy_Penguins%29.png/revision/latest?cb=20250223010902">
+                    <span class="tooltiptext"><strong>HABIBTI</strong></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br>
+        </div>
+        <!-- <div id="ButtonRow">
+            <button id="moveButton">Move Penguins Closer</button>
+        </div> -->
+
+        <div class="love">
+            <div id="heart3" class="hearts"></div>
+            <div id="heart4" class="hearts"></div>
+            <div id="heart5" class="hearts"></div>
+            <button type="button" id="button" class="buttons">❤️‍🔥</button>
+            <div id="heart1" class="hearts"></div>
+            <div id="heart1" class="hearts"></div>
+            <div id="heart2" class="hearts"></div>
+        </div>
+
+
+        <button id="refreshButton">
+            <svg fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 474.022 474.022" xml:space="preserve"
+                style="height: 20px;width: 20px;">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <path
+                            d="M458.753,232.949c0,80.073-65.148,145.222-145.228,145.222h-94.835l65.316,65.319c7.017,7.011,7.017,18.424,0,25.435 c-6.785,6.797-18.643,6.797-25.439,0l-96.035-96.026c-3.402-3.398-5.27-7.921-5.27-12.727c0-4.805,1.874-9.326,5.27-12.72 l96.035-96.032c6.785-6.797,18.643-6.809,25.439,0c7.017,7.017,7.017,18.424,0,25.44l-65.316,65.319h94.835 c60.242,0,109.243-49,109.243-109.236c0-51.58-35.979-94.826-84.134-106.211c2.151-3.803,3.393-8.068,3.393-12.554 c0-6.872-2.672-13.323-7.53-18.169l-7.648-7.651C400.698,95.113,458.753,157.362,458.753,232.949z M131.986,359.842 c0-4.492,1.247-8.754,3.396-12.555C87.227,335.902,51.25,292.654,51.25,241.076c0-60.228,49-109.236,109.237-109.236h94.83 l-65.311,65.319c-7.013,7.017-7.013,18.43,0,25.446c6.803,6.809,18.654,6.797,25.446,0l96.029-96.032 c3.404-3.396,5.272-7.917,5.272-12.723c0-4.805-1.874-9.327-5.272-12.723L215.446,5.098c-6.792-6.797-18.648-6.797-25.44,0 c-7.013,7.013-7.013,18.424,0,25.44l65.311,65.32h-94.83C80.412,95.858,15.269,161,15.269,241.076 c0,75.581,58.049,137.834,131.898,144.59l-7.651-7.648C134.661,373.164,131.986,366.71,131.986,359.842z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+
+    </div>
+
+    <script src="PudgyLove.js"></script>
+</body>
+
+</html>
+<!-- <script>
+    document.getElementById('moveButton').addEventListener('click', movePenguins);
+
+    let penguin1 = document.getElementById('penguin1');
+    let penguin2 = document.getElementById('penguin2');
+
+    let penguin1Position = 20;
+    let penguin2Position = 20;
+
+    function movePenguins() {
+        if (penguin1Position < 45 && penguin2Position < 45) {
+            penguin1Position += 5;
+            penguin2Position += 5;
+
+            penguin1.style.left = `${penguin1Position}%`;
+            penguin2.style.right = `${penguin2Position}%`;
+        }
+        else {
+            penguin2.remove();
+            // penguin1.src = "https://media.tenor.com/5Ux5jcrpkHoAAAAe/a-peck-on-the-cheeks-pudgy-penguins.png";
+            // penguin1.src = "https://media1.tenor.com/m/5Ux5jcrpkHoAAAAd/a-peck-on-the-cheeks-pudgy-penguins.gif";
+            penguin1.src = "https://media1.tenor.com/m/0bqCKXQqhakAAAAd/hugging-pudgy-penguins.gif";
+            let penguin1Position = 50;
+            penguin1.style.left = penguin1Position;
+            penguin1.style.right = penguin1Position;
+            penguin1.width = 120;
+            // alert("TE DUA JASHT MASE JETA IME !");
+            document.getElementById('moveButton').innerText = "TE DUA JASHT MASE JETA IME !";
+        }
+    }
+
+
+</script> -->
